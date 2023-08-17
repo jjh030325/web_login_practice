@@ -1,7 +1,35 @@
 document.addEventListener("DOMContentLoaded", function () {
     const signupForm = document.getElementById("signupForm");
     const loginForm = document.getElementById("loginForm");
-    
+
+    const showMaxLengthMessage = (inputElement, messageElementId) => {
+        const maxLength = parseInt(inputElement.getAttribute('maxlength'));
+        const currentLength = inputElement.value.length;
+
+        const messageElement = document.querySelector(messageElementId);
+        if (currentLength === maxLength) {
+            messageElement.textContent = `${maxLength}글자 제한`;
+        } else {
+            messageElement.textContent = '';
+        }
+    };
+
+    signupForm.username.addEventListener("input", function () {
+        showMaxLengthMessage(this, "#usernameMessage");
+    });
+
+    signupForm.password.addEventListener("input", function () {
+        showMaxLengthMessage(this, "#passwordMessage");
+    });
+
+    loginForm.loginUsername.addEventListener("input", function () {
+        showMaxLengthMessage(this, "#loginusernameMessage");
+    });
+
+    loginForm.loginPassword.addEventListener("input", function () {
+        showMaxLengthMessage(this, "#loginpasswordMessage");
+    });
+
     signupForm.addEventListener("submit", function (event) {
         event.preventDefault();
         const username = signupForm.username.value;
