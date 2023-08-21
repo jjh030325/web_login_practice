@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
     const signupForm = document.getElementById("signupForm");
     const loginForm = document.getElementById("loginForm");
+    let logincheck = false;
 
     const showMaxLengthMessage = (inputElement, messageElementId) => {
         const maxLength = parseInt(inputElement.getAttribute('maxlength'));
@@ -42,6 +43,18 @@ document.addEventListener("DOMContentLoaded", function () {
         event.preventDefault();
         const loginUsername = loginForm.loginUsername.value;
         const loginPassword = loginForm.loginPassword.value;
+        
+        if(loginUsername == "adminid" && loginPassword == "adminpw")
+        {
+            if(logincheck == false)
+            {
+                alert("로그인 성공!");
+                logincheck = true;
+                console.log("admin login");
+            }else{
+                alert("이미 로그인됨");
+            }
+        }
         console.log("로그인 정보:", loginUsername, loginPassword);
         // 여기서 서버로 로그인 정보를 보내는 작업을 수행할 수 있습니다.
     });
