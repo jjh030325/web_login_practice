@@ -1,11 +1,14 @@
 # web_login_practice
--개강 전 처음 웹 공부를 하고 그를 토대로 회원가입과 로그인 기능을 간단하게 구현해보는 연습
+개강 전 처음 웹 공부를 하고 그를 토대로 회원가입과 로그인 기능을 간단하게 구현해보는 연습
+
+
 ![image](https://github.com/jjh030325/web_login_practice/assets/117177784/aa8327fc-dc8a-451b-80b3-fce9ffcb666a)
 -basic
 ![image](https://github.com/jjh030325/web_login_practice/assets/117177784/33a55336-7148-47f1-b9c3-be4015ed5040)
 -login
 ![image](https://github.com/jjh030325/web_login_practice/assets/117177784/9e60000d-10fc-4219-b30e-b58653fe2280)
 -login repeat
+
 
 -기본적인 화면 구성과 단순 기능, 관리자 아이디와 비밀번호를 미리 지정해서 처리하는 방식으로 구현
 
