@@ -15,7 +15,7 @@
             <div class="form-container">
                 <div class="form">
                     <h1>회원가입</h1>
-                    <form id="signupForm">
+                    <form id="signupForm" action="/register" method="post">
                         <label for="username">사용자 이름</label>
                         <input type="text" id="username" name="username" maxlength="10" required><br>
                         <span id="usernameMessage" class="message"></span>
@@ -28,7 +28,7 @@
               
                 <div class="form">
                     <h1>로그인</h1>
-                    <form id="loginForm">
+                    <form id="loginForm" action="/login" method="post">
                         <label for="loginUsername">사용자 이름</label>
                         <input type="text" id="loginUsername" name="loginUsername" maxlength="10" required><br>
                         <span id="loginusernameMessage" class="message"></span>
