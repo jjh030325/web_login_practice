@@ -11,7 +11,7 @@ router.get(
         title: "Home",
     }
     const data = await IdPass.find();
-    res.render("index");
+    res.render("index", { message: ""});
 })
 );
 
@@ -33,15 +33,15 @@ router.post(
         const { loginUsername, loginPassword } = req.body;
         const user = await IdPass.findOne({ username: loginUsername });
         if(!user) {
-            return res.status(401).json({message: "일치하는 사용자가 없습니다."});
+            return res.render("index", { message: "일치하는 사용자가 없습니다." });
         }
 
         const isValidPasswword = await bcrypt.compare(loginPassword, user.password);
 
         if(!isValidPasswword) {
-            return res.status(401).json({message: "비밀번호가 일치하지 않습니다."});
+            return res.render("index", { message: "비밀번호가 일치하지 않습니다." });
         }
-        return res.status(200).json({message: "로그인 성공"});
+        return res.render("index", { message: "로그인 성공!" });
     })
 )
 

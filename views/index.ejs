@@ -12,6 +12,9 @@
         </div>
         <div class="container">
             <p>이 웹페이지는 회원가입과 로그인을 테스트하기위해 만들어졌어!</p>
+            
+            <div id="messageBox" style="color: red; font-weight: bold;"></div>
+
             <div class="form-container">
                 <div class="form">
                     <h1>회원가입</h1>
@@ -40,5 +43,11 @@
                 </div>
             </div>
         </div>
+
+        <% if (message) { %>
+        <script>
+            document.getElementById('messageBox').textContent = "<%= message %>";
+        </script>
+        <% } %>
     </body>
 </html>
